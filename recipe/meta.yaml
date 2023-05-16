@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: pyebsdindex-meta
@@ -7,10 +7,10 @@ package:
 source:
   fn: pyebsdindex-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/pyebsdindex/pyebsdindex-{{ version }}.tar.gz
-  sha256: f0c90afab532e2f015515ed6c4d797a6e97dd772d38855a009f913dd64adb68e
+  sha256: c7ffc4de87eed40c9d1c4386df57792e168723fce4f6e30d186a25a7c3244785
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
