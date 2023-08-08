@@ -1,4 +1,4 @@
-{% set version = "0.1.2" %}
+{% set version = "0.2.0" %}
 
 package:
   name: pyebsdindex-meta
@@ -7,7 +7,7 @@ package:
 source:
   fn: pyebsdindex-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/pyebsdindex/pyebsdindex-{{ version }}.tar.gz
-  sha256: c7ffc4de87eed40c9d1c4386df57792e168723fce4f6e30d186a25a7c3244785
+  sha256: 7ff9bb7984d30e0f023209bb9ec1d11cb077060461f99ef720080f1c0f47b5bb
 
 build:
   number: 0
@@ -35,7 +35,6 @@ outputs:
         - ocl-icd-system  # [linux]
         - ocl_icd_wrapper_apple  # [osx]
         - pyopencl
-        - pyswarms
         - python
         - scipy
     test:
@@ -47,9 +46,10 @@ outputs:
         - pyebsdindex.ebsd_index
         - pyebsdindex.nlpar
         - pyebsdindex.pcopt
+        - pyebsdindex.tripletvote
       commands:
         - pip check
-        - pytest --pyargs pyebsdindex -k "not test_index_pats and not test_pc_optimize and not test_pc_optimize_pso"
+        - pytest --pyargs pyebsdindex
 
   - name: pyebsdindex
     build:
@@ -69,14 +69,15 @@ outputs:
         - pyebsdindex.ebsd_index
         - pyebsdindex.nlpar
         - pyebsdindex.pcopt
+        - pyebsdindex.tripletvote
       commands:
-        - pytest --pyargs pyebsdindex -k "not test_index_pats and not test_pc_optimize and not test_pc_optimize_pso"
+        - pytest --pyargs pyebsdindex -k "not test_index_pats_multi"
 
 about:
   home: https://pyebsdindex.readthedocs.io
   license_file: License
   license: LicenseRef-PyEBSDIndex
-  summary: Python based tool for Hough/Radon based EBSD indexing
+  summary: Python based tool for Radon based EBSD indexing
   doc_url: https://pyebsdindex.readthedocs.io
   dev_url: https://github.com/USNavalResearchLaboratory/PyEBSDIndex
 
