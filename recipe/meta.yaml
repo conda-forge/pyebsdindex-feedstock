@@ -35,7 +35,6 @@ outputs:
         - ocl-icd-system  # [linux]
         - ocl_icd_wrapper_apple  # [osx]
         - pyopencl
-        - pyswarms
         - python
         - scipy
     test:
@@ -47,9 +46,10 @@ outputs:
         - pyebsdindex.ebsd_index
         - pyebsdindex.nlpar
         - pyebsdindex.pcopt
+        - pyebsdindex.tripletvote
       commands:
         - pip check
-        - pytest --pyargs pyebsdindex -k "not test_index_pats and not test_pc_optimize and not test_pc_optimize_pso"
+        - pytest --pyargs pyebsdindex #-k "not test_index_pats and not test_pc_optimize and not test_pc_optimize_pso"
 
   - name: pyebsdindex
     build:
@@ -69,14 +69,15 @@ outputs:
         - pyebsdindex.ebsd_index
         - pyebsdindex.nlpar
         - pyebsdindex.pcopt
+        - pyebsdindex.tripletvote
       commands:
-        - pytest --pyargs pyebsdindex -k "not test_index_pats and not test_pc_optimize and not test_pc_optimize_pso"
+        - pytest --pyargs pyebsdindex #-k "not test_index_pats and not test_pc_optimize and not test_pc_optimize_pso"
 
 about:
   home: https://pyebsdindex.readthedocs.io
   license_file: License
   license: LicenseRef-PyEBSDIndex
-  summary: Python based tool for Hough/Radon based EBSD indexing
+  summary: Python based tool for Radon based EBSD indexing
   doc_url: https://pyebsdindex.readthedocs.io
   dev_url: https://github.com/USNavalResearchLaboratory/PyEBSDIndex
 
