@@ -49,7 +49,7 @@ outputs:
         - pyebsdindex.tripletvote
       commands:
         - pip check
-        - pytest --pyargs pyebsdindex #-k "not test_index_pats and not test_pc_optimize and not test_pc_optimize_pso"
+        - pytest --pyargs pyebsdindex
 
   - name: pyebsdindex
     build:
@@ -71,7 +71,7 @@ outputs:
         - pyebsdindex.pcopt
         - pyebsdindex.tripletvote
       commands:
-        - pytest --pyargs pyebsdindex #-k "not test_index_pats and not test_pc_optimize and not test_pc_optimize_pso"
+        - pytest --pyargs pyebsdindex -k "not test_index_pats_multi"
 
 about:
   home: https://pyebsdindex.readthedocs.io
