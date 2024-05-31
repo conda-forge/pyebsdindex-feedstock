@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: pyebsdindex-meta
@@ -7,7 +7,7 @@ package:
 source:
   fn: pyebsdindex-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/pyebsdindex/pyebsdindex-{{ version }}.tar.gz
-  sha256: 18532a91291c0c410e8d12a49edea096dfb28b0c04433456fae71d7dd8da522e
+  sha256: 54c50f64b1e1150a73fcbd87b73f6318b06e9ac9e2d40b6dce1cf35624cbe4d2
 
 build:
   number: 0
@@ -30,7 +30,7 @@ outputs:
         - __{{ target_os }}
         - h5py
         - matplotlib-base
-        - numba
+        - numba >=0.53
         - numpy
         - ocl-icd-system  # [linux]
         - ocl_icd_wrapper_apple  # [osx]
