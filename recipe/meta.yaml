@@ -30,7 +30,7 @@ outputs:
         - __{{ target_os }}
         - h5py
         - matplotlib-base
-        - numba >= 0.53
+        - numba >=0.53
         - numpy
         - ocl-icd-system  # [linux]
         - ocl_icd_wrapper_apple  # [osx]
