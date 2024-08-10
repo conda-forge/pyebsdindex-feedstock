@@ -60,7 +60,7 @@ outputs:
       run:
         - __{{ target_os }}
         - {{ pin_subpackage('pyebsdindex-base', exact=True) }}
-        - ray-default  # [not osx]
+        - ray-default 
     test:
       requires:
         - pytest
