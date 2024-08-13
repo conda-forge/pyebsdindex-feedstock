@@ -1,4 +1,4 @@
-{% set version = "0.3.5" %}
+{% set version = "0.3.6" %}
 
 package:
   name: pyebsdindex-meta
@@ -7,7 +7,7 @@ package:
 source:
   fn: pyebsdindex-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/pyebsdindex/pyebsdindex-{{ version }}.tar.gz
-  sha256: 3c23e52de368368a277a1adc443a519d687f46e889d1d5c92f269e0bbe9274ca
+  sha256: 14b2e696ec373c253095729b098e75f005897466e1e0046e56dac0792db09d9f
 
 build:
   number: 0
@@ -60,7 +60,7 @@ outputs:
       run:
         - __{{ target_os }}
         - {{ pin_subpackage('pyebsdindex-base', exact=True) }}
-        - ray-default  # [not osx]
+        - ray-default 
     test:
       requires:
         - pytest
