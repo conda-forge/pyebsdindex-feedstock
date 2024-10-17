@@ -16,6 +16,7 @@ build:
 requirements:
   host:
     - python
+    - setuptools
 
 outputs:
   - name: pyebsdindex-base
