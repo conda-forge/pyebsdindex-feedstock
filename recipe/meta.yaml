@@ -16,7 +16,6 @@ build:
 requirements:
   host:
     - python
-    - setuptools
 
 outputs:
   - name: pyebsdindex-base
@@ -27,6 +26,7 @@ outputs:
       host:
         - python >=3.7
         - pip
+        - setuptools
       run:
         - __{{ target_os }}
         - h5py
