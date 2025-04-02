@@ -28,6 +28,7 @@ outputs:
         - pip
         - setuptools
       run:
+        - __{{ target_os }}
         - python >={{ python_min }}
         - h5py
         - matplotlib-base
@@ -60,6 +61,7 @@ outputs:
       host:
         - python {{ python_min }}
       run:
+        - __{{ target_os }}
         - {{ pin_subpackage('pyebsdindex-base', exact=True) }}
         - ray-default >=2.9
     test:
