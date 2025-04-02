@@ -10,7 +10,7 @@ source:
   sha256: 368cb2749cef2ed1950040378e4c5c213aced4b572e863b2a5c4ad9ca39b3fda
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -28,6 +28,7 @@ outputs:
         - pip
         - setuptools
       run:
+        - __{{ target_os }}
         - python >={{ python_min }}
         - h5py
         - matplotlib-base
@@ -60,6 +61,7 @@ outputs:
       host:
         - python {{ python_min }}
       run:
+        - __{{ target_os }}
         - {{ pin_subpackage('pyebsdindex-base', exact=True) }}
         - ray-default >=2.9
     test:
