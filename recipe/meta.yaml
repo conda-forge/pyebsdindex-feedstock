@@ -28,15 +28,15 @@ outputs:
         - pip
         - setuptools
       run:
-        - __{{ target_os }}
+        - python >={{ python_min }}
         - h5py
         - matplotlib-base
-        - numba >=0.53
+        - numba >=0.55.1
         - numpy
         - ocl-icd-system  # [linux]
         - ocl_icd_wrapper_apple  # [osx]
         - pyopencl
-        - python >={{ python_min }}
+        
         - scipy
     test:
       requires:
@@ -60,9 +60,8 @@ outputs:
       host:
         - python {{ python_min }}
       run:
-        - __{{ target_os }}
         - {{ pin_subpackage('pyebsdindex-base', exact=True) }}
-        - ray-default
+        - ray-default >=2.9
     test:
       requires:
         - pytest
