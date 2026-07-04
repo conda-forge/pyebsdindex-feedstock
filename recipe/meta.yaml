@@ -1,4 +1,4 @@
-{% set version = "0.3.10" %}
+{% set version = "0.3.10.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 source:
   fn: pyebsdindex-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/p/pyebsdindex/pyebsdindex-{{ version }}.tar.gz
-  sha256: e7355c3e659b8720f195e309c1169aa4af4879861bc6353cce75c3aa497ca03d
+  sha256: 1f7312bd6448a09946b55a624efe6ad394fcab9271e4694d236829990741c767
 
 build:
   number: 0
